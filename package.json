@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "cy:run": "npx cypress run",
+    "cy:open": "npx cypress open",
     "report:merge": "mochawesome-merge > index.json",
     "report:mocha": "marge index.json",
     "report:clean": "rimraf mochawesome-report index.json"
@@ -18,9 +19,9 @@
   "devDependencies": {
     "chance": "^1.1.8",
     "cypress-multi-reporters": "^1.5.0",
-    "mochawesome": "^7.0.1",
+    "mochawesome": "^7.1.2",
     "mochawesome-merge": "^4.2.1",
-    "mochawesome-report-generator": "^6.0.1",
+    "mochawesome-report-generator": "^6.1.1",
     "rimraf": "^3.0.2"
   }
 }
