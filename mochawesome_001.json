@@ -5,9 +5,9 @@
     "passes": 1,
     "pending": 0,
     "failures": 0,
-    "start": "2022-03-11T00:35:05.051Z",
-    "end": "2022-03-11T00:35:25.895Z",
-    "duration": 20844,
+    "start": "2022-03-11T00:54:00.194Z",
+    "end": "2022-03-11T00:54:19.959Z",
+    "duration": 19765,
     "testsRegistered": 1,
     "passPercent": 100,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "dfa19df7-b508-4f6a-a47c-0cacb7889417",
+      "uuid": "d4136d5f-1ed1-4b21-92cd-8b8ef742e15c",
       "title": "",
       "fullFile": "cypress/integration/cadastro.spec.js",
       "file": "cypress/integration/cadastro.spec.js",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "1462af25-122e-4a6f-a4b0-88140c53dff4",
+          "uuid": "49f5f15c-5504-4f11-9337-d3180b9e41ff",
           "title": "Cadastro",
           "fullFile": "",
           "file": "",
@@ -38,7 +38,7 @@
               "title": "Deve realizar um cadastro",
               "fullTitle": "Cadastro Deve realizar um cadastro",
               "timedOut": null,
-              "duration": 17835,
+              "duration": 17438,
               "state": "passed",
               "speed": "slow",
               "pass": true,
@@ -47,20 +47,20 @@
               "context": null,
               "code": "//clicar no botão sign in\ncy.intercept('POST', 'http://automationpractice.com/index.php').as('TestCreateAnAccountRequest');\ncy.get('.header_user_info > .login').click();\ncy.url().should('include', '/index.php?controller=authentication&back=my-account'); //digitar endereço de email no campo: email address\ncy.get('.form-group > #email_create').should('be.visible').type(chance.email()); //clicar no botão Create an account\ncy.get('.submit > #SubmitCreate').click();\ncy.wait('@TestCreateAnAccountRequest').then(res => {\n  expect(res.response.statusCode).to.equal(200);\n}); //como selecionar outros buttons radios\ncy.get('[type=\"radio\"]').first().check();\ncy.get('.required.form-group > #customer_firstname').should('be.visible').type(chance.first());\ncy.get('.required.form-group > #customer_lastname').should('be.visible').type(chance.last()); //cy.get('.required.form-group > #email').should('be.visible').type('anna@exxxample.com')\ncy.get('.required.password.form-group > #passwd').should('be.visible').type('aaaaa12389'); //Inputs combobox\ncy.get('select#days').select('8', {\n  force: true\n});\ncy.get('select#months').select('January', {\n  force: true\n});\ncy.get('select#years').select('2006', {\n  force: true\n}); //Inputs checkbox\ncy.get('#optin').check();\ncy.get('#company.form-control').should('be.visible').type(chance.company());\ncy.get('#address1.form-control').should('be.visible').type('rua filie santiago, 222, centro');\ncy.get('#address2.form-control').should('be.visible').type(chance.address());\ncy.get('#city.form-control').should('be.visible').type(chance.city());\ncy.get('select#id_state').select('Virginia', {\n  force: true\n});\ncy.get('#postcode.form-control.uniform-input.text').should('be.visible').type('00000');\ncy.get('#other.form-control').should('be.visible').type('aaa, 4903928482');\ncy.get('#phone.form-control').should('be.visible').type(chance.phone());\ncy.get('#phone_mobile.form-control').should('be.visible').type(chance.phone());\ncy.get('#alias.form-control').should('be.visible').type(chance.address());\ncy.get('.submit.clearfix > #submitAccount').click();",
               "err": {},
-              "uuid": "838dcfce-82cd-4495-acae-93b1f4da6cc5",
-              "parentUUID": "1462af25-122e-4a6f-a4b0-88140c53dff4",
+              "uuid": "29cb6605-6f72-4f02-9447-f501b67af105",
+              "parentUUID": "49f5f15c-5504-4f11-9337-d3180b9e41ff",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "838dcfce-82cd-4495-acae-93b1f4da6cc5"
+            "29cb6605-6f72-4f02-9447-f501b67af105"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 17835,
+          "duration": 17438,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
