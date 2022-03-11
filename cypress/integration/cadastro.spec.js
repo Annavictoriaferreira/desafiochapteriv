@@ -27,7 +27,7 @@ describe('Cadastro', () => {
 
         cy.get('.required.form-group > #customer_firstname').should('be.visible').type(chance.first())
         cy.get('.required.form-group > #customer_lastname').should('be.visible').type(chance.last())
-        //cy.get('.required.form-group > #email').should('be.visible').type('anna@exxxample.com')
+        cy.get('.required.form-group > #email').should('be.visible').type('anna@exxxample.com')
         cy.get('.required.password.form-group > #passwd').should('be.visible').type('aaaaa12389')
 
         //Inputs combobox
@@ -37,7 +37,6 @@ describe('Cadastro', () => {
 
         //Inputs checkbox
         cy.get('#optin').check()
-
         cy.get('#company.form-control').should('be.visible').type(chance.company())
         cy.get('#address1.form-control').should('be.visible').type('rua filie santiago, 222, centro')
         cy.get('#address2.form-control').should('be.visible').type(chance.address())
