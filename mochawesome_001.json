@@ -1,0 +1,107 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2022-03-11T00:38:27.907Z",
+    "end": "2022-03-11T00:38:52.312Z",
+    "duration": 24405,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "a257a2aa-1268-4203-9818-f042a9f814c0",
+      "title": "",
+      "fullFile": "cypress/integration/cadastro.spec.js",
+      "file": "cypress/integration/cadastro.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "3906aff8-7164-4a07-bc06-ec838f8b99d3",
+          "title": "Cadastro",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Deve realizar um cadastro",
+              "fullTitle": "Cadastro Deve realizar um cadastro",
+              "timedOut": null,
+              "duration": 21903,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "//clicar no botão sign in\ncy.intercept('POST', 'http://automationpractice.com/index.php').as('TestCreateAnAccountRequest');\ncy.get('.header_user_info > .login').click();\ncy.url().should('include', '/index.php?controller=authentication&back=my-account'); //digitar endereço de email no campo: email address\ncy.get('.form-group > #email_create').should('be.visible').type(chance.email()); //clicar no botão Create an account\ncy.get('.submit > #SubmitCreate').click();\ncy.wait('@TestCreateAnAccountRequest').then(res => {\n  expect(res.response.statusCode).to.equal(200);\n}); //como selecionar outros buttons radios\ncy.get('[type=\"radio\"]').first().check();\ncy.get('.required.form-group > #customer_firstname').should('be.visible').type(chance.first());\ncy.get('.required.form-group > #customer_lastname').should('be.visible').type(chance.last()); //cy.get('.required.form-group > #email').should('be.visible').type('anna@exxxample.com')\ncy.get('.required.password.form-group > #passwd').should('be.visible').type('aaaaa12389'); //Inputs combobox\ncy.get('select#days').select('8', {\n  force: true\n});\ncy.get('select#months').select('January', {\n  force: true\n});\ncy.get('select#years').select('2006', {\n  force: true\n}); //Inputs checkbox\ncy.get('#optin').check();\ncy.get('#company.form-control').should('be.visible').type(chance.company());\ncy.get('#address1.form-control').should('be.visible').type('rua filie santiago, 222, centro');\ncy.get('#address2.form-control').should('be.visible').type(chance.address());\ncy.get('#city.form-control').should('be.visible').type(chance.city());\ncy.get('select#id_state').select('Virginia', {\n  force: true\n});\ncy.get('#postcode.form-control.uniform-input.text').should('be.visible').type('00000');\ncy.get('#other.form-control').should('be.visible').type('aaa, 4903928482');\ncy.get('#phone.form-control').should('be.visible').type(chance.phone());\ncy.get('#phone_mobile.form-control').should('be.visible').type(chance.phone());\ncy.get('#alias.form-control').should('be.visible').type(chance.address());\ncy.get('.submit.clearfix > #submitAccount').click();",
+              "err": {},
+              "uuid": "047c1fd4-f7e5-4330-a8d3-30a90c6cce37",
+              "parentUUID": "3906aff8-7164-4a07-bc06-ec838f8b99d3",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "047c1fd4-f7e5-4330-a8d3-30a90c6cce37"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 21903,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": true,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.2"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "mochawesome-report",
+        "quiet": true,
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.1.1"
+    }
+  }
+}
