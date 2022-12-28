@@ -2,14 +2,14 @@
   "stats": {
     "suites": 1,
     "tests": 1,
-    "passes": 1,
+    "passes": 0,
     "pending": 0,
-    "failures": 0,
-    "start": "2022-03-11T12:52:14.684Z",
-    "end": "2022-03-11T12:52:40.421Z",
-    "duration": 25737,
+    "failures": 1,
+    "start": "2022-12-28T20:30:01.867Z",
+    "end": "2022-12-28T20:30:09.664Z",
+    "duration": 7797,
     "testsRegistered": 1,
-    "passPercent": 100,
+    "passPercent": 0,
     "pendingPercent": 0,
     "other": 0,
     "hasOther": false,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "37d95e2b-8a0b-48dc-9b6c-8d02513abe89",
+      "uuid": "dbe5829f-d645-44dd-9d60-93bdf56c7680",
       "title": "",
       "fullFile": "cypress/integration/cadastro.spec.js",
       "file": "cypress/integration/cadastro.spec.js",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "fe7e2a26-3243-40d8-991d-a2c2a20434f4",
+          "uuid": "7393d534-2e00-413d-9bf2-598a83edf85a",
           "title": "Cadastro",
           "fullFile": "",
           "file": "",
@@ -38,29 +38,33 @@
               "title": "Deve realizar um cadastro",
               "fullTitle": "Cadastro Deve realizar um cadastro",
               "timedOut": null,
-              "duration": 21245,
-              "state": "passed",
-              "speed": "slow",
-              "pass": true,
-              "fail": false,
+              "duration": 5335,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
               "pending": false,
               "context": null,
               "code": "//clicar no botão sign in\ncy.intercept('POST', 'http://automationpractice.com/index.php').as('TestCreateAnAccountRequest');\ncy.get('.header_user_info > .login').click();\ncy.url().should('include', '/index.php?controller=authentication&back=my-account'); //digitar endereço de email no campo: email address\ncy.get('.form-group > #email_create').should('be.visible').type(chance.email()); //clicar no botão Create an account\ncy.get('.submit > #SubmitCreate').click();\ncy.wait('@TestCreateAnAccountRequest').then(res => {\n  expect(res.response.statusCode).to.equal(200);\n}); //como selecionar outros buttons radios\ncy.get('[type=\"radio\"]').first().check();\ncy.get('.required.form-group > #customer_firstname').should('be.visible').type(chance.first());\ncy.get('.required.form-group > #customer_lastname').should('be.visible').type(chance.last());\ncy.get('.required.form-group > #email').should('be.visible').type('anna@exxxample.com');\ncy.get('.required.password.form-group > #passwd').should('be.visible').type('aaaaa12389'); //Inputs combobox\ncy.get('select#days').select('8', {\n  force: true\n});\ncy.get('select#months').select('January', {\n  force: true\n});\ncy.get('select#years').select('2006', {\n  force: true\n}); //Inputs checkbox\ncy.get('#optin').check();\ncy.get('#company.form-control').should('be.visible').type(chance.company());\ncy.get('#address1.form-control').should('be.visible').type('rua filie santiago, 222, centro');\ncy.get('#address2.form-control').should('be.visible').type(chance.address());\ncy.get('#city.form-control').should('be.visible').type(chance.city());\ncy.get('select#id_state').select('Virginia', {\n  force: true\n});\ncy.get('#postcode.form-control.uniform-input.text').should('be.visible').type('00000');\ncy.get('#other.form-control').should('be.visible').type('aaa, 4903928482');\ncy.get('#phone.form-control').should('be.visible').type(chance.phone());\ncy.get('#phone_mobile.form-control').should('be.visible').type(chance.phone());\ncy.get('#alias.form-control').should('be.visible').type(chance.address());\ncy.get('.submit.clearfix > #submitAccount').click();",
-              "err": {},
-              "uuid": "c2cd23f0-93c6-4b3f-91d7-2f4272a5a7cf",
-              "parentUUID": "fe7e2a26-3243-40d8-991d-a2c2a20434f4",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `.header_user_info > .login`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `.header_user_info > .login`, but never found it.\n    at Context.eval (http://automationpractice.com/__cypress/tests?p=cypress/integration/cadastro.spec.js:2217:8)",
+                "diff": null
+              },
+              "uuid": "e7f560f9-326d-4706-b003-50e23805423e",
+              "parentUUID": "7393d534-2e00-413d-9bf2-598a83edf85a",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
-          "passes": [
-            "c2cd23f0-93c6-4b3f-91d7-2f4272a5a7cf"
+          "passes": [],
+          "failures": [
+            "e7f560f9-326d-4706-b003-50e23805423e"
           ],
-          "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 21245,
+          "duration": 5335,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
